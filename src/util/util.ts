@@ -44,14 +44,14 @@ export async function getFilePathsFromDirectory(dir: string) {
   return files
 }
 
-export function isValidUrl(str:string) {
-  
+export function isValidUrl(str: string) {
+  let url = null;
   try {
-    new URL(str);
+    url = new URL(str);
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return false;
   }
 
-  return true;
+  return url != null;
 }
